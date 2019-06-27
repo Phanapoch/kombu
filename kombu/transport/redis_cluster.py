@@ -8,7 +8,7 @@ from kombu.utils.eventio import READ, ERR
 from kombu.utils.json import loads
 from kombu.utils.uuid import uuid
 
-from .transport import virtual
+from .transport.virtual import Transport
 from .transport.redis import (
     Channel as RedisChannel,
     MultiChannelPoller,
@@ -266,7 +266,7 @@ class RedisClusterTransport(RedisTransport):
     driver_type = 'redis-cluster'
     driver_name = driver_type
 
-    implements = virtual.Transport.implements.extend(
+    implements = Transport.implements.extend(
         asynchronous=True, exchange_type=frozenset(['direct'])
     )
 
