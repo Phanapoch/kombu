@@ -190,7 +190,7 @@ class Channel(RedisChannel):
         return ClusterConnectionPool(**params)
 
     def _get_client(self):
-        return rediscluster.StrictRedisCluster
+        return rediscluster.RedisCluster
 
     def _create_client(self, asynchronous=False):
         params = {'skip_full_coverage_check': True}
