@@ -41,7 +41,7 @@ TRANSPORT_ALIASES = {
     'azurestoragequeues': 'kombu.transport.azurestoragequeues:Transport',
     'azureservicebus': 'kombu.transport.azureservicebus:Transport',
     'pyro': 'kombu.transport.pyro:Transport',
-    'redis-cluster': 'kombu.transport.redis_cluster:Transport'
+    'redis-cluster': 'kombu.transport.redis_cluster:RedisClusterTransport'
 }
 
 _transport_cache = {}
